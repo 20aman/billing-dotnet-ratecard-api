@@ -67,18 +67,20 @@ namespace ARMAPI_Test
                 // You can also walk through this object to manipulate the individuals member objects. 
                 RateCardPayload payload = JsonConvert.DeserializeObject<RateCardPayload>(rateCardResponse);
 
-                //Dynamically populate your Meter ID
-                string meterId = "";
+                #region Uncomment and Use this region to search for a meter ID
+                ////Dynamically populate your Meter ID
+                //string meterId = "";
 
-                //Iterating over all the meters
-                foreach (var meter in payload.Meters)
-                {
-                    if (meter.MeterId == meterId)
-                    {
-                        //you can access the meter information here
-                        //Console.WriteLine(meter.MeterCategory);
-                    }
-                }
+                ////Iterating over all the meters
+                //foreach (var meter in payload.Meters)
+                //{
+                //    if (meter.MeterId == meterId)
+                //    {
+                //        //you can access the meter information here
+                //        //Console.WriteLine(meter.MeterCategory);
+                //    }
+                //}
+                #endregion
 
                 Console.WriteLine(rateCardResponse.ToString());
                 response.Close();
